@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inicio do SEO do site -->
+    <meta name="author" content="Rafael Faria - http://www.rafaelfar.com"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" value=""/>
+    <meta name="googlebot" content="index, follow"/>
+    <!--Define que a pagina será indexada no google  | para bloquear nofollow, nosnippet, noodp, noarchive, noimageindex -->
+    <meta name="robots" content="All"/>
+    <!-- SEO para localização -->
+    <meta name="geo.placename" content="sao paulo">
+    <meta name="geo.position" content="sao paulo">
+    <meta name="geo.position" content="-23.615636,-46.572526">
+    <meta name="geo.region" content="BR">
+    <meta name="geo.country" content="brazil">
+
+    <meta name="Language" content="pt-BR">
+    <meta name="Distribution" content="Global">
+    <meta name="Revisit" content="1 days">
+    <!-- Organic SEO  -->
+    <meta property="og:image" content="http://www.rafaelfar.com/seo-html5.jpg">
+    <!--trocar a imagem pelo imagem da pagina-->
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="SiteName">
+    <meta property="og:url" content="http://www.rafaelfar.com/">
+    <meta property="og:updated_time" content="2013-08-29T10:08:01+00:00">
+    <meta property="article:published_time" content="2013-08-30T09:56:52+00:00">
+    <meta property="article:modified_time" content="2013-08-29T10:08:01+00:00">
+    <meta property="article:publisher" content="https://www.facebook.com/rafaelfar">
+
+    <!-- twitter SEO  -->
+    <meta name="twitter:image:src" content="http://www.rafaelfar.com/seo-html5.jpg">
+    <meta name="twitter:creator" content="@Sales">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fim do SEO do site -->
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div id="mocha"></div>
+    <script src="mocha.js"></script>
+    <script src="chai.js"></script>
+    <script>
+        mocha.setup('bdd');
+        mocha.reporter('html');
+    </script>
+    <script src="MyLibrary.js"></script>
+    <script src="global-tests.js"></script>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
