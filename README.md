@@ -1,6 +1,6 @@
 # crud-es6-localstorage
 
-[![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations]
+[![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)](https://paypal.me/rafaelfaria)
 [![Latest Version](https://img.shields.io/github/release/rrfaria/sketch-iconfont.svg?style=flat-square)](https://github.com/rrfaria/sketch-iconfont/releases)
 
 Crud using es6 , webpack, sass, cloudnary,babel and small js engine
