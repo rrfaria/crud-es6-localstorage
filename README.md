@@ -11,7 +11,7 @@ $ git clone
 $ npm install
 ```
 
-#using the Cloudnary 
+### using the Cloudnary 
 
 Create your account on cloudnary and then make sure you did the fallow steps:
 
@@ -57,6 +57,7 @@ Those information you will replace on ``` src/utils/cloudnary ``` at line 9 uplo
  - [ ] Jsx syntax running
  - [ ] Delete action (fix)
  - [x] Mocha and Chai installation
+ - [ ] Mocha web interface see tests
  - [ ] Unit test
  - [ ] behavior test
  - [ ] CSS Regression test (possible tool to use backstop.js)
