@@ -1,7 +1,7 @@
 # crud-es6-localstorage
 
 [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)](https://paypal.me/rafaelfaria)
-[![GitHub release](https://img.shields.io/badge/version%3A-1.0--beta-green.svg?style=flat-square)]()
+[![GitHub release](https://img.shields.io/badge/version%3A-1.0.0--beta-green.svg?style=flat-square)]()
 
 Crud using es6 , webpack, sass, cloudnary,babel and small js engine
 
