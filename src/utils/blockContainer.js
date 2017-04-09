@@ -19,6 +19,6 @@ export default class blockContainer{
                             content +
                         '</div>' +
                     '</div>';
-        where.appendChild(mount);
+        where.insertAdjacentHTML('afterend',mount);
     }
 }

@@ -1,4 +1,4 @@
-# crud-es6-localstorage
+# Crud using ES6 and localStorage
 
 [![PayPal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/rafaelfaria)
 [![GitHub release](https://img.shields.io/badge/version%3A-1.0.0--beta-green.svg?style=flat-square)](https://github.com/rrfaria/crud-es6-localstorage/)

@@ -1,4 +1,5 @@
---require test/helpers.js
+
+--require babel-polyfill
 --reporter spec
 --compilers js:babel-core/register
 --slow 5000
