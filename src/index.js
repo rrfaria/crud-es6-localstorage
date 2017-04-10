@@ -75,29 +75,18 @@ imgContainer.addEventListener('click',()=>{
 });
 
 //pass container, event, selector and function with callback to get the button clicked
-// $.on('tablerows','click','#tablerows tr td .btnDelete',(element)=>{
-//     console.log('delete');
-//     let index = element.getAttribute("data-id");
-//     storage.deleteTableRow(index);
-// });
+$.on('tablerows','click','btnDelete',(element)=>{
+    console.log('delete');
+    let index = element.getAttribute("data-id");
+    storage.deleteTableRow(index);
+});
 
 
 //pass container, event, selector and function with callback to get the button clicked
-// $.on('tablerows','click','#tablerows .btnEdit',(element)=>{
-//     let index = element.getAttribute("data-id");
-//     storage.onEditPressed(index);
-// });
-function deleteitem(){
-    $.on2('#tablerows .btnDelete',(element)=>{
-        let index = element.getAttribute("data-id");
-        storage.deleteTableRow(index);
-        deleteitem();
-    });
-}
-deleteitem();
-
-
-
+$.on('tablerows','click','btnEdit',(element)=>{
+    let index = element.getAttribute("data-id");
+    storage.onEditPressed(index);
+});
 
 btnSave.addEventListener('click', ()=>{
     console.log('save');
