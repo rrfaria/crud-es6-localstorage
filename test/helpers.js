@@ -1,3 +1,4 @@
+//it is a global settings
 import suppertest from 'supertest';
 import chai from 'chai';
 import General from '../src/utils/general';

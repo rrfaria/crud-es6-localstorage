@@ -1,15 +1,15 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const path = require("path");
 
 module.exports = {
-    entry: 'mocha!./test/index.js',
+    entry: {
+        app: './test/index.js'
+    },
     output: {
         filename: 'assets/js/[name].test.bundle.js',
-        path: path.resolve(__dirname,'test/')
+        path: path.resolve(__dirname,'webtest/')
     },
     module: {
         rules: [
@@ -22,27 +22,11 @@ module.exports = {
                         presets: ['env']
                     }
                 }
-            },
-            {
-                test: /\.(css|scss|sass)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader!sass-loader!postcss-loader'
-                }),
-            },
-            {
-                test: /\.(jpe?g|png|jpg|gif)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '../images/[name].[ext]'
-                    }
-                }
             }
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, "test"),
+        contentBase: path.join(__dirname, "webtest"),
         hot: true,
         open: true
     },
@@ -50,14 +34,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Mocha test Runner',
             hash: true,
-            template: './src/index.html'
+            template: './test/index.html'
         }),
-        new ExtractTextPlugin('assets/css/[name].css'),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [autoprefixer]
-            }
-        })
+        new webpack.HotModuleReplacementPlugin()
     ]
 };

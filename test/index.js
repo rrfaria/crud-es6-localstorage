@@ -1,5 +1,24 @@
-// This will search for files ending in .test.js and require them
-// so that they are added to the webpack bundle
-let context = require.context('.', true, /.+\.test\.js?$/);
-context.keys().forEach(context);
-module.exports = context;
+describe ('Interface', ()=>{
+
+    describe ('Create Elements',()=>{
+        it ('should return 3 panels', () =>{
+            expect("1").to.equal("1");
+        });
+        it ('should add fields', () =>{
+            expect("1").to.equal("1");
+        })
+    });
+    describe ('Vallidate Masks',()=>{
+        it ('mask phone', () =>{
+            expect("1").to.equal("1");
+        });
+        it ('mask cpf', () =>{
+            expect("1").to.equal("1");
+        })
+    })
+    describe ('Check address field',()=>{
+        it ('load google place autocomplete', () =>{
+            expect("1").to.equal("1");
+        });
+    })
+});

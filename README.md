@@ -13,7 +13,7 @@ $ npm install
 
 ### using the Cloudnary 
 
-Create your account on cloudnary and then make sure you did the fallow steps:
+Create your account on cloudinary and then make sure you did the following steps:
 
 * go to there : [https://cloudinary.com](https://cloudinary.com)
 
