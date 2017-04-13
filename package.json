@@ -9,7 +9,7 @@
     "clean": "rimraf ./dist/*",
     "test": "mocha --opts test/mocha.opts test/**/*.js",
     "testw": "mocha --opts test/mocha.opts test/**/*.js -w",
-    "testb": "./node_modules/.bin/cucumber-js",
+    "testb": "cucumberjs",
     "test-tdd": "mocha --opts test/mocha.opts test/**/*.js",
     "test2": "find ./ -name '*.test.js' | xargs mocha -R min -r babel/register",
     "devtest": "webpack-dev-server --config webpack.tests.config.js"
@@ -30,7 +30,7 @@
     "chromedriver": "^2.29.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
-    "cucumber": "^1.3.2",
+    "cucumber": "^2.0.0-rc.9",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
