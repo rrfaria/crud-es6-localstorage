@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Inicio do SEO do site -->
@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="app">
-    <div class="root">
+    <div id="block-root"  class="root">
         <div class="block-container">
             <div class="mainPanel">
                 <div class="headerPanel">
@@ -57,10 +57,12 @@
                 <div class="Inputer">
                     <input type="text" name="txtAddress" id="txtAddress" class="form-control input" required="" placeholder="">
                     <label for="txtAddress" class="floating-label">Endereço</label>
+                    <span class="pe-7f-map-marker"></span>
                 </div>
                 <div class="Inputer">
                     <input type="text" name="txtComplement" id="txtComplement" class="form-control input" required="">
                     <label for="txtComplement" class="floating-label">Complemento</label>
+                    <span class="pe-7f-map-marker"></span>
                 </div>
                 <button class="btnSave">Salvar</button>
             </div>
@@ -77,7 +79,6 @@
                 </table>
             </div>
         </div>
-        <div id="animal"></div>
 
 
     </div>

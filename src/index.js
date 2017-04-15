@@ -93,13 +93,14 @@ btnSave.addEventListener('click', ()=>{
     (name.value==='')?name.classList.add('has-error'):name.classList.remove('has-error');
     //TODO - Check if it is highlight the fields when empty
     if(name.value!=='' && General.check(cpf,'cpf',14) && General.check(phone,'phone',14)){
-        if(photoUpload.value!==""){
+        if(photoUpload.value!=="" || btnSave.nodeValue ==="update"){
             //pass element and callback to promise return object with image and thumb
             cloud.sendData(inputImg, (imageUploaded)=>{
                 //console.log(imageUploaded);
                 storage.onRegisterPressed(imageUploaded.image,imageUploaded.thumb);
             });
         }else {
+
             let defaultimg = 'assets/images/shape-one.jpg';
             let defaultThumb= 'assets/images/defaultThumb.png';
             storage.onRegisterPressed(defaultimg,defaultThumb);
@@ -116,18 +117,27 @@ btnSave.addEventListener('click', ()=>{
 // const panel = new blockContainer();
 // panel.render(where,content,icon,t);
 
-// const $root = document.getElementById('animal');
-// /** @jsx h */
-// const a = (
-//     <ul>
-//         <li>item 1</li>
-//         <li>item 2</li>
-//     </ul>
-// );
-// const Fgine = new FEgine();
-//
-//
-// Fgine.render($root,a);
+const $root = document.getElementById('block-root');
+const Fgine = new FEgine();
+
+/** @jsx FEgine.h */
+const child = (
+    <div>tets</div>
+);
+const a = (
+    <div className="block-container">
+        <div className="mainPanel">
+            <div className="headerPanel"><i className="pe-7f-user"></i>
+                <h2 className="title">Lista de Contatos</h2>
+            </div>
+            {child}
+        </div>
+    </div>
+);
+
+
+
+FEgine.render($root,a);
 
 
 

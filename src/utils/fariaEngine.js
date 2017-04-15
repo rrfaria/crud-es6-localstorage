@@ -1,8 +1,8 @@
-/** @jsx h */
+
 export default class FEgine {
     constructor() {
     }
-
+    /** @jsx h */
     static h(type, props, ...children) {
         return { type, props, children };
     }
@@ -12,6 +12,18 @@ export default class FEgine {
             return document.createTextNode(node);
         }
         const $el = document.createElement(node.type);
+        //it should parse the props class
+        if (node.props!==null){
+            const map = new Map(Object.entries(node.props));
+            $el.classList = map.get('className');
+            //It should return any custom attribute
+            map.forEach( (val, key) =>{
+                if (key!=="className"){
+                    $el.setAttribute(key, val);
+                }
+            });
+        }
+
         node.children
             .map(FEgine.createElement)
             .forEach($el.appendChild.bind($el));
@@ -24,7 +36,7 @@ export default class FEgine {
             node1.type !== node2.type
     }
 
-    render($parent, newNode, oldNode, index = 0) {
+    static render($parent, newNode, oldNode, index = 0) {
         if (!oldNode) {
             $parent.appendChild(
                 FEgine.createElement(newNode)
