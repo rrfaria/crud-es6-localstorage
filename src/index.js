@@ -8,6 +8,34 @@ import FEgine from './utils/fariaEngine';
 import blockContainer from'./utils/blockContainer';
 import imputer from './utils/imputer';
 
+
+const Fgine = new FEgine();
+
+/** @jsx FEgine.h */
+
+const $root = document.getElementById('block-root');
+const panelOne = (
+        { type: 'div',props: { 'class': 'bodyPanel' },  children: [
+            imputer.mount("upload","uplImage","uplImage","","FOTO"),
+            imputer.mount("text","txtFullname","txtFullname","form-control input","Nome","","",true),
+            imputer.mount("text","txtCpf","txtCpf","form-control input","CPF","","",true),
+            imputer.mount("text","txtTelephone","txtTelefone","form-control input","Telefone","","",true),
+            imputer.mount("text","txtAddress","txtAddress","form-control input","Endereço","","pe-7f-map-marker",true),
+            imputer.mount("text","txtComplement","txtComplement","form-control input","Complemento","","pe-7f-map-marker",true),
+            <button className="btnSave">Salvar</button>
+        ] }
+);
+
+const panelTwo=(<table>
+                    <tbody id="tablerows">
+                    </tbody>
+                </table>);
+
+blockContainer.render($root,panelOne,"pe-7f-keypad","Projeto Crud - localStorage","active","pe-7f-help1","Desenvolvido com: ES6, WEBPACK, MOCHA, CHAI,local Storage,cloudinary");
+blockContainer.render($root,panelTwo,"pe-7f-user","Lista de Contatos","","","");
+
+
+//element Handle
 let imgContainer = document.querySelector('#app .root .block-container .mainPanel .shape');
 let inputImg = document.querySelector('#app .root .block-container .mainPanel .shape .photo');
 let img = document.querySelector('#app .root .block-container .mainPanel .shape .base img');
@@ -31,7 +59,7 @@ const autocomplete = new google.maps.places.Autocomplete((address), {
 let storage = new lsManager();
 
 
-//EVENTS
+//EVENTS HANDLE
 //TODO - Optimize event function
 
 //Key UP
@@ -109,36 +137,3 @@ btnSave.addEventListener('click', ()=>{
 
     }
 });
-
-
-// const where = $.id('animal');
-// const content = "teste";
-// const icon ="pe-7f-keypad";
-// const t = "title";
-// const panel = new blockContainer();
-// panel.render(where,content,icon,t);
-
-const $root = document.getElementById('block-root');
-const Fgine = new FEgine();
-
-/** @jsx FEgine.h */
-const child = (
-    <div>tets</div>
-);
-const a = (
-    <div className="block-container">
-        <div className="mainPanel">
-            <div className="headerPanel"><i className="pe-7f-user"></i>
-                <h2 className="title">Lista de Contatos</h2>
-            </div>
-            {child}
-        </div>
-    </div>
-);
-
-
-
-FEgine.render($root,a);
-
-
-

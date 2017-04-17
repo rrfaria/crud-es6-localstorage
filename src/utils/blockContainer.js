@@ -4,7 +4,7 @@ export default class blockContainer{
     constructor(){
 
     }
-    render(where, content,icon,title,helpActive="",helpIcon="",helpDescription=""){
+    static render(where, content,icon,title,helpActive="",helpIcon="",helpDescription=""){
         const Fgine = new FEgine();
 
         const mount = (

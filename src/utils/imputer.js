@@ -5,14 +5,14 @@ export default class imputer {
 
     }
 
-    static mount(iType,iName, iID, iClass,iTtitle,iImage="assets/images/shape-one.jpg",iIcon, iReq=false){
+    static mount(iType,iName, iID, iClass="",iTtitle,iImage="assets/images/shape-one.jpg",iIcon="", iReq=false,placeholder=""){
         let required = (iReq)?"required":"";
         let mount;
         switch (iType){
             case 'text':
                 return (
                     <div className="Inputer">
-                        <input type="text" name={iName} id={iID} className={iClass} required={required}/>
+                        <input type="text" name={iName} id={iID} className={iClass} required={required} placeholder={placeholder}/>
                             <label for={iName} className="floating-label">{iTtitle}</label>
                             <span className={iIcon}></span>
                     </div>
