@@ -91,4 +91,11 @@ Those information you will replace on ``` src/utils/cloudnary ``` at line 9 uplo
 ```
   npm run testb
 ```
+  The behavior test generate a report inside ```features/reports```
+  you can open on your browser to see graphical representation.
   
+```
+features
+    reports
+      cucumber-report.html
+```
