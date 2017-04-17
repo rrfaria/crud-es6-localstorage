@@ -81,3 +81,14 @@ Those information you will replace on ``` src/utils/cloudnary ``` at line 9 uplo
  - [ ] Bower integration with webpack
  
  
+  ### Running Tests:
+  
+  to unit test :
+  ```
+    npm run test
+  ```
+  to Behavior test :
+```
+  npm run testb
+```
+  
