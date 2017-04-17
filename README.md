@@ -30,6 +30,21 @@ Those information you will replace on ``` src/utils/cloudnary ``` at line 9 uplo
  npm run dev
  ```
  
+  ### Possible issues:
+ 
+ if you are running on windows 
+ 
+ First you need add a custom host in C:\WINDOWS\System32\drivers\etc into host file 
+ 
+ On webpack config you can see on dev-server settings:
+  ``` 
+  host: "mywebsite.dev" 
+  ```
+  So to it works on windows you need add:
+```
+  127.0.0.1 mywebsite.dev
+```
+ 
  ### TODO / Developing
  
  - [x] webpack setup
@@ -53,13 +68,13 @@ Those information you will replace on ``` src/utils/cloudnary ``` at line 9 uplo
  - [x] selector class
  - [x] event Handle to queryselector 
  - [x] Google places integrated on "Endereço" field
- - [ ] Js engine to create virtualDOM (in Progress)
- - [ ] Jsx syntax running
- - [ ] Delete action (fix)
+ - [X] Js engine to create virtualDOM 
+ - [x] Jsx syntax running
+ - [x] Delete action
  - [x] Mocha and Chai installation
  - [ ] Mocha web interface see tests
  - [ ] Unit test
- - [ ] behavior test
+ - [x] behavior test
  - [ ] CSS Regression test (possible tool to use backstop.js)
  - [ ] Acceptance test
  - [ ] optimize event function

@@ -7,10 +7,9 @@
     "dev": "set NODE=dev && webpack-dev-server",
     "prod": "npm run clean && set NODE_ENV=production && webpack -p",
     "clean": "rimraf ./dist/*",
-    "test": "mocha --opts test/mocha.opts test/**/*.js",
-    "testw": "mocha --opts test/mocha.opts test/**/*.js -w",
+    "unit-test": "mocha --opts test/mocha.opts test/**/*.js",
+    "unit-test-watch": "mocha --opts test/mocha.opts test/**/*.js -w",
     "testb": "node ./node_modules/selenium-cucumber-js/index.js -s ./features/step_definitions -p ./features/page_objects -o ./features/shared_objects -r ./features/reports",
-    "test-tdd": "mocha --opts test/mocha.opts test/**/*.js",
     "test2": "find ./ -name '*.test.js' | xargs mocha -R min -r babel/register",
     "devtest": "webpack-dev-server --config webpack.tests.config.js"
   },
