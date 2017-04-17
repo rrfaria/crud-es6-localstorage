@@ -6,6 +6,7 @@ import lsManager from './utils/lsManager';
 import $ from './utils/elementSelector';
 import FEgine from './utils/fariaEngine';
 import blockContainer from'./utils/blockContainer';
+import imputer from './utils/imputer';
 
 let imgContainer = document.querySelector('#app .root .block-container .mainPanel .shape');
 let inputImg = document.querySelector('#app .root .block-container .mainPanel .shape .photo');

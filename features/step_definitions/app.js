@@ -57,6 +57,7 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         const fileToUpload = './features/bdd-test.png';
         const absolutePath = path.resolve(__dirname, fileToUpload);
+        console.log('path:',absolutePath);
         driver.findElement(by.css('input[type=file]')).sendKeys(absolutePath);
         callback();
     });
@@ -90,7 +91,7 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         setTimeout(function(){
             callback(null, 'pending');
-        }, 11000);
+        }, 21000);
     });
 
 

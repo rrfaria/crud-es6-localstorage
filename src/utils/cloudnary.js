@@ -25,7 +25,7 @@ export default class Cloudnary {
         let theurl ="";
         formData.append('file',file);
         formData.append('upload_preset',this.uploadPreset);
-        console.log(this.params);
+        //console.log(this.params);
 
         fetch(this.url, {
             method: 'POST',
@@ -71,7 +71,7 @@ export default class Cloudnary {
             //let fileType = fileInput.files[0].name.match(/.(jpg|jpeg|png|gif)$/i);
             reader.readAsDataURL(file); //reads the data as a URL
         } else {
-            console.warn('no image selected');
+            //console.warn('no image selected');
             preview.src = "assets/images/shape-one.jpg";
         }
     }

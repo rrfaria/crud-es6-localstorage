@@ -1,3 +1,5 @@
+import FEgine from './fariaEngine';
+/** @jsx FEgine.h */
 export default class imputer {
     constructor() {
 
@@ -5,26 +7,31 @@ export default class imputer {
 
     static mount(iType,iName, iID, iClass,iTtitle,iImage="assets/images/shape-one.jpg",iIcon, iReq=false){
         let required = (iReq)?"required":"";
+        let mount;
         switch (iType){
             case 'text':
-                return '<div class="Inputer">'+
-                            '<input type="text" name="'+iName+'" id="'+iID+'" class="'+iClass+'" required="'+required+'">'+
-                            '<label for="txtTelefone" class="floating-label">'+iTtitle+'</label>'+
-                            '<span class="'+iIcon+'"></span>'+
-                        '</div>';
+                return (
+                    <div className="Inputer">
+                        <input type="text" name={iName} id={iID} className={iClass} required={required}/>
+                            <label for={iName} className="floating-label">{iTtitle}</label>
+                            <span className={iIcon}></span>
+                    </div>
+
+                );
                 break;
             case 'upload':
-                return '<div class="shape">'+
-                            '<a href="#" class="overlay hexagon"></a>'+
-                            '<div class="details">'+
-                                '<a href="#" class="button">'+iTtitle+'</a>'+
-                            '</div>'+
-                            '<div class="bg"></div>'+
-                            '<div class="base">'+
-                                '<img src="'+iImage+'" alt="'+iTtitle+'">'+
-                            '</div>'+
-                            '<input type="file" class="photo upload-button" name="'+iName+'" id="'+iID+'">'+
-                        '</div>';
+                return (<div className="shape">
+                            <a href="#" class="overlay hexagon"></a>
+                            <div className="details">
+                                <a href="#" class="button">{iTtitle}</a>
+                            </div>
+                            <div className="bg"></div>
+                            <div className="base">
+                                <img src={iImage} alt={iTtitle}/>
+                            </div>
+                            <input type="file" className="photo upload-button" name={iName} id={iID}/>
+                        </div>
+                );
                 break;
             default:
                 break;
