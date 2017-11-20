@@ -2,8 +2,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const path = require("path");
+
+// postcss plugins
+const postcssImport = require('postcss-import');
+const stylelint = require('stylelint');
+const postcssReporter = require('postcss-reporter');
+const postcssCssnext = require('postcss-cssnext');
+const postcssNested = require('postcss-nested');
+const postcssRemoveRoot = require('postcss-remove-root');
+const cssMqpacker = require('css-mqpacker');
+const autoprefixer = require('autoprefixer');
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 /**
@@ -46,7 +55,26 @@ module.exports = {
                         'css-loader',
                         {
                             loader: 'postcss-loader',
-                            options: { plugins: [require('autoprefixer')({ browsers: ['last 2 versions'] })] },
+                            options: {
+                                plugins: () => [
+                                    autoprefixer({ browsers: ['last 2 versions'] }),
+                                    postcssImport,
+                                    stylelint(),
+                                    postcssReporter(),
+                                    postcssCssnext({
+                                      features: {
+                                        autoprefixer: {
+                                          grid: false
+                                        }
+                                      }
+                                    }),
+                                    postcssNested,
+                                    postcssRemoveRoot,
+                                    cssMqpacker({
+                                      sort: true
+                                    })
+                                ]
+                            },
                         },
                         'sass-loader',
                     ]
