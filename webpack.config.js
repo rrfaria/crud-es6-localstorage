@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const path = require("path");
 
-
+const DEBUG = process.env.NODE_ENV !== 'production';
 /**
  * Public resources path
  */
@@ -42,7 +42,14 @@ module.exports = {
                 test: /\.(css|scss|sass)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader!sass-loader!postcss-loader'
+                    use: [
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: { plugins: [require('autoprefixer')({ browsers: ['last 2 versions'] })] },
+                        },
+                        'sass-loader',
+                    ]
                 }),
             },
             {
@@ -86,6 +93,7 @@ module.exports = {
         port: 3001,
         open: true
     },
+    devtool: DEBUG ? 'source-map' : '',
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Crud',
@@ -94,11 +102,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('assets/css/[name].css'),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [autoprefixer]
-            }
-        }),
+
         new CopyWebpackPlugin([
             { from:  'src/assets/fonts', to:  'assets/fonts', toType: 'dir', force: true },
             { from:  'src/assets/images', to:  'assets/images', toType: 'dir', force: true }
