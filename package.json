@@ -4,7 +4,7 @@
   "description": "test frontend",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE=dev && webpack-dev-server",
+    "dev": "set NODE_ENV=dev && webpack-dev-server",
     "prod": "npm run clean && set NODE_ENV=production && webpack -p",
     "clean": "rimraf ./dist/*",
     "unit-test": "mocha --opts test/mocha.opts test/**/*.js",

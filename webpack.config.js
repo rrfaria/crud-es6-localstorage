@@ -56,10 +56,11 @@ module.exports = {
                         {
                             loader: 'postcss-loader',
                             options: {
+                                //sourceMap: true,
                                 plugins: () => [
                                     autoprefixer({ browsers: ['last 2 versions'] }),
                                     postcssImport,
-                                    stylelint(),
+                                    //stylelint(),
                                     postcssReporter(),
                                     postcssCssnext({
                                       features: {
@@ -116,9 +117,8 @@ module.exports = {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         hot: true,
-
-        host: "mywebsite.dev",
-        port: 3001,
+        https: false,
+        port: 3000,
         open: true
     },
     devtool: DEBUG ? 'source-map' : '',
